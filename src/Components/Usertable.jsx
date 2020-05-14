@@ -1,6 +1,6 @@
 import React from "react";
 
-const Usertable = ({ users }) => {
+const Usertable = ({ users, editUser, deleteUser, editRow }) => {
 	return (
 		<table>
 			<thead>
@@ -17,8 +17,14 @@ const Usertable = ({ users }) => {
 							<td>{user.name}</td>
 							<td>{user.username}</td>
 							<td>
-								<button className="button muted-button">Edit</button>
-								<button className="button muted-button">Delete</button>
+								<button 
+								className="button muted-button"
+								onClick={() => editRow(user)}
+								>Edit</button>
+								<button 
+								className="button muted-button"
+								onClick={() => deleteUser(user.id)}
+								>Delete</button>
 							</td>
 						</tr>
 					))
